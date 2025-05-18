@@ -1,0 +1,102 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    min-height: 100vh;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background: #00923a;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Navigation */
+nav {
+    grid-area: nav;
+    background: #298fbe;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Layout */
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+/* Content & Sidebar */
+.content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.sidebar {
+    background: #ccc;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background: #222222;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack content */
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
